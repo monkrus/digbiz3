@@ -1,0 +1,35 @@
+{
+  "name": "digbiz3-backend",
+  "version": "1.0.0",
+  "description": "Backend API for DigBiz3 networking app",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --watch --detectOpenHandles"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "helmet": "^7.2.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.23",
+    "@types/node": "^20.19.13",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "networking",
+    "business-cards"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
