@@ -2,19 +2,33 @@
   "name": "digbiz3-backend",
   "version": "1.0.0",
   "description": "Backend API for DigBiz3 networking app",
-  "main": "src/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "dev:watch": "nodemon --exec ts-node src/app.ts",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
     "test": "jest --detectOpenHandles",
-    "test:watch": "jest --watch --detectOpenHandles"
+    "test:watch": "jest --watch --detectOpenHandles",
+    "setup:db": "npx prisma generate && npx prisma db push",
+    "dev:cluster": "node cluster.js",
+    "dev:ai": "npm run dev",
+    "deploy:staging": "npm run build && node dist/app.js"
   },
   "dependencies": {
+    "@prisma/client": "^6.15.0",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^4.18.2",
+    "express-rate-limit": "^8.1.0",
     "helmet": "^7.2.0",
-    "morgan": "^1.10.1"
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "prisma": "^6.15.0",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.23",
