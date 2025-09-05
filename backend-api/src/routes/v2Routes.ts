@@ -6,12 +6,14 @@ import monetizationService from '../services/monetizationService';
 import { authMiddleware, premiumMiddleware, rateLimitMiddleware } from '../middleware/auth';
 import userRoutes from './userRoutes';
 import connectionRoutes from './connectionRoutes';
+import blockchainRoutes from './blockchainRoutes';
 
 const router = express.Router();
 
 // Core user management routes
 router.use('/users', userRoutes);
 router.use('/connections', connectionRoutes);
+router.use('/blockchain', blockchainRoutes);
 
 // ==================== ANALYTICS & BUSINESS INTELLIGENCE ====================
 
